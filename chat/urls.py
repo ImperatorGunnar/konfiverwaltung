@@ -19,9 +19,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', views.zeige, name='Zeige'),
+    url(r'^home/$', views.zeige, name='Zeige'),
     url(r'^add/', views.add, name='Zeige'),
     url(r'^edit/$', views.get_name, name='Zeige'),
     url(r'^addgd', views.addgd, name='Zeige'),
     url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^logout/$', auth_views.logout,{'next_page': '/home'}, name='logout'),
 ]

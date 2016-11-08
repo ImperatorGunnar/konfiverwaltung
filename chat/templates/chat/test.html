@@ -6,10 +6,15 @@
     <style>
       table, td { border: 2px solid white; background: lightblue }
       th { border: 2px solid white; background: lightgreen }
+      div#one {float: left;}
+      div#two {float: left;}
+      footer {position: absolute; bottom: 0;}
     </style>
 </head>
 <body>
     <a>Aktuelle KW: {{ kawo }} </a>
+    <div>
+    <div id="one">
     <h2>Diese Woche</h2>
     <table>
         <tr>
@@ -42,7 +47,16 @@
         </tr>
         {% endfor %}
     </table>
-<br>
-<a>Gunnar Wachenfeld 2016 </a><a href="https://github.com/imperatorgunnar/konfi">Github</a><a> Freie Software GPLv3</a>
+  </div>
+  <div id="two">
+    <form action="/add">
+  <input type="submit" value="Administration" />
+  </form>
+  </div>
+</div>
 </body>
+<footer>
+  <br>
+  <a>Gunnar Wachenfeld 2016 </a><a href="https://github.com/ImperatorGunnar/konfiverwaltung">Github</a><a> Freie Software </a><a href="https://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>
+</footer>
 </html>

@@ -2,6 +2,9 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<style>
+  footer {position: absolute; bottom: 0;}
+</style>
   <h2>Login</h2>
   <form method="post">
     {% csrf_token %}
@@ -9,3 +12,7 @@
     <button type="submit">Login</button>
   </form>
 {% endblock %}
+<footer>
+  <a>Gunnar Wachenfeld 2016 </a><a href="https://github.com/ImperatorGunnar/konfiverwaltung">Github</a><a> Freie Software </a><a href="https://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>
+  <br>
+</footer>

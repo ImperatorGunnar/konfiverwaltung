@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
+    <style>
+      div {float: left;}
+      footer {position: absolute; bottom: 0;}
+    </style>
 </head>
 <body>
+    <div>
     <h1>VERWALTUNG</h1>
     {% for gdi in gd %}
     <a href="/edit/?id={{gdi.id}}">{{gdi.kirche}} || {{gdi.datum}} || {{gdi.konfi}}</a>
     <br>
     {% endfor %}
+    </div>
+    <div>
     <form action="/addgd/" method="get">
     <input type="submit" value="Gottesdienst hinzufügen" />
-</form>
+    </form>
+    <br>
+    <form action="/logout/" method="get">
+    <input type="submit" value="Logout" />
+    </form>
+    </div>
 </body>
+<footer>
+  <a>Gunnar Wachenfeld 2016 </a><a href="https://github.com/ImperatorGunnar/konfiverwaltung">Github</a><a> Freie Software </a><a href="https://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>
+  <br>
+</footer>
 </html>
