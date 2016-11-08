@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Gottesdienste</title>
+    <style>
+      table, td { border: 2px solid white; background: lightblue }
+      th { border: 2px solid white; background: lightgreen }
+    </style>
+</head>
+<body>
+    <a>Aktuelle KW: {{ kawo }} </a>
+    <h2>Diese Woche</h2>
+    <table>
+        <tr>
+        <th>Kirche</th>
+        <th>Wann</th>
+        <th>Konfis</th>
+        </tr>
+        {% for gd in gd1 %}
+        <tr>
+        <td>{{gd.kirche}}</td>
+
+        <td>{{gd.datum}}</td>
+        <td>{{gd.konfi}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Dannach</h2>
+    <table>
+        <tr>
+        <th>Kirche</th>
+        <th>Wann</th>
+        <th>Konfis</th>
+        </tr>
+        {% for gd in gd2 %}
+        <tr>
+        <td>{{gd.kirche}}</td>
+
+        <td>{{gd.datum}}</td>
+        <td>{{gd.konfi}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<br>
+<a>Gunnar Wachenfeld 2016 </a><a href="https://github.com/imperatorgunnar/konfi">Github</a><a> Freie Software GPLv3</a>
+</body>
+</html>

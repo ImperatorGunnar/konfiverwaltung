@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>VERWALTUNG</h1>
+    {% for gdi in gd %}
+    <a href="/edit/?id={{gdi.id}}">{{gdi.kirche}} || {{gdi.datum}} || {{gdi.konfi}}</a>
+    <br>
+    {% endfor %}
+    <form action="/addgd/" method="get">
+    <input type="submit" value="Gottesdienst hinzufügen" />
+</form>
+</body>
+</html>
