@@ -20,8 +20,11 @@ def zeige(request):
 
 def add(request):
     if request.user.is_authenticated():
-        gd = Sonn.objects.all().order_by('datum')
-        return render(request, 'chat/add.html', {'gd': gd, })
+        date = datetime.date.today()
+        start_week = date - datetime.timedelta(date.weekday())
+        end_week2= start_week + datetime.timedelta(208)
+        gd1 = Sonn.objects.filter(datum__range=[start_week, end_week2]).order_by('datum')
+        return render(request, 'chat/add.html', {'gd': gd1, })
     else:
         return HttpResponseRedirect('/login')
 
